@@ -18,10 +18,8 @@ type User struct {
     Name string 
     Age  int
 }
-```
 
-基本用法
-go
+// 基本用法
 // 初始化
 cache := NewGameCache(db /* gorm.DB */, 10*time.Minute /* 缓存有效期 */)
 
@@ -34,6 +32,8 @@ u.Name = "李四" // 修改会自动标记为脏数据
 
 // 稍后会自动同步到数据库...
 // 最终数据库记录变为 {1, "李四", 19}
+```
+
 工作原理
 ​​读取流程​​：
 检查缓存是否存在
